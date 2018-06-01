@@ -1,0 +1,3 @@
+mkdir- make a directory
+cd- change directory
+ls- list of files and directories
