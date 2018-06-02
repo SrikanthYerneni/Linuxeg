@@ -4,4 +4,151 @@ vi filename opens a file and allows to edit
 pidof processname gives you the process-id of the given process
 kill process-id kills the process with the given id
 Written from the browser and after a successful pull you can view this.
+[srikanth@localhost ~]$ ls
+dead.letter  Documents  Linuxeg  Pictures  Templates
+Desktop      Downloads  Music    Public    Videos
+[srikanth@localhost ~]$ cd /home
+[srikanth@localhost home]$ ls
+sena  srikanth  usr1  usr10  usr12  usr2
+[srikanth@localhost home]$ su - sena
+Password: 
+Last login: Fri Jun  1 18:15:56 CDT 2018 on pts/0
+[sena@localhost ~]$ exit
+logout
+[srikanth@localhost home]$ ssh key-gen
+The authenticity of host 'key-gen (104.239.207.44)' can't be established.
+ECDSA key fingerprint is SHA256:Qcg8zcFGJAUwtnb1c/oATrVTIdRoFK/neQF7fmK/mag.
+ECDSA key fingerprint is MD5:f0:44:49:bb:c6:d7:c2:17:f6:66:dc:cc:00:e5:b9:e2.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'key-gen' (ECDSA) to the list of known hosts.
+srikanth@key-gen's password: 
+Permission denied, please try again.
+srikanth@key-gen's password: 
+Permission denied, please try again.
+srikanth@key-gen's password: 
+
+[srikanth@localhost home]$ ls
+sena  srikanth  usr1  usr10  usr12  usr2
+[srikanth@localhost home]$ cd srikanth/
+[srikanth@localhost ~]$ ls -la
+total 40
+drwx------. 18 srikanth srikanth 4096 Jun  2 03:21 .
+drwxr-xr-x.  8 root     root       84 Jun  1 18:10 ..
+-rw-------.  1 srikanth srikanth 1934 Jun  2 03:21 .bash_history
+-rw-r--r--.  1 srikanth srikanth   18 Apr 10 19:53 .bash_logout
+-rw-r--r--.  1 srikanth srikanth  193 Apr 10 19:53 .bash_profile
+-rw-r--r--.  1 srikanth srikanth  231 Apr 10 19:53 .bashrc
+drwx------. 16 srikanth srikanth 4096 Jun  1 17:14 .cache
+drwxr-xr-x. 14 srikanth srikanth  261 Jun  2 02:27 .config
+drwx------.  3 srikanth srikanth   25 Jun  1 17:11 .dbus
+-rw-------.  1 srikanth srikanth   23 Jun  1 19:07 dead.letter
+drwxr-xr-x.  3 srikanth srikanth   21 Jun  1 17:56 Desktop
+drwxr-xr-x.  2 srikanth srikanth    6 Jun  1 17:11 Documents
+drwxr-xr-x.  2 srikanth srikanth    6 Jun  1 17:11 Downloads
+-rw-------.  1 srikanth srikanth   16 Jun  1 17:11 .esd_auth
+-rw-------.  1 srikanth srikanth  624 Jun  2 02:23 .ICEauthority
+drwxrwxr-x.  6 srikanth srikanth  104 Jun  2 03:03 Linuxeg
+drwx------.  3 srikanth srikanth   19 Jun  1 17:11 .local
+drwxr-xr-x.  5 srikanth srikanth   54 Jun  1 17:14 .mozilla
+drwxr-xr-x.  2 srikanth srikanth    6 Jun  1 17:11 Music
+drwxr-xr-x.  2 srikanth srikanth    6 Jun  1 17:11 Pictures
+drwxrw----.  3 srikanth srikanth   19 Jun  2 02:54 .pki
+drwxr-xr-x.  2 srikanth srikanth    6 Jun  1 17:11 Public
+drwx------.  2 srikanth srikanth   25 Jun  2 02:00 .ssh
+drwxr-xr-x.  2 srikanth srikanth    6 Jun  1 17:11 Templates
+drwxr-xr-x.  2 srikanth srikanth    6 Jun  1 17:11 Videos
+-rw-------.  1 srikanth srikanth 2106 Jun  2 02:58 .viminfo
+[srikanth@localhost ~]$ cd .ssh
+[srikanth@localhost .ssh]$ ls
+known_hosts
+[srikanth@localhost .ssh]$ ssh key-gen
+srikanth@key-gen's password: 
+
+[srikanth@localhost .ssh]$ cd .
+[srikanth@localhost .ssh]$ cd ..
+[srikanth@localhost ~]$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/srikanth/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/srikanth/.ssh/id_rsa.
+Your public key has been saved in /home/srikanth/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:yPptK4CG/YP28K754U0b70vtlx3fpLOKYOLEsY2Ir7c srikanth@localhost.localdomain
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+|                 |
+|                 |
+|     . .         |
+| o .  + S        |
+|. +..+ = .    . .|
+| .oo+.O = .  o =.|
+|  o*+B.O.o .o + o|
+| .+BEo=+*oo....o |
++----[SHA256]-----+
+[srikanth@localhost ~]$ ls
+dead.letter  Documents  Linuxeg  Pictures  Templates
+Desktop      Downloads  Music    Public    Videos
+[srikanth@localhost ~]$ pwd
+/home/srikanth
+[srikanth@localhost ~]$ cd .ssh
+[srikanth@localhost .ssh]$ ls
+id_rsa  id_rsa.pub  known_hosts
+[srikanth@localhost .ssh]$ ssh copy-id sena@localhost
+^C
+[srikanth@localhost .ssh]$ ssh-copy-id sena@localhost
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/srikanth/.ssh/id_rsa.pub"
+The authenticity of host 'localhost (::1)' can't be established.
+ECDSA key fingerprint is SHA256:xJkX+QBdDn8Ta/BMqI2sg2K+PFSRKktW3/KqItLT5k4.
+ECDSA key fingerprint is MD5:3b:0c:8d:79:84:9b:3b:45:b5:04:51:c1:2e:68:59:e7.
+Are you sure you want to continue connecting (yes/no)? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+sena@localhost's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'sena@localhost'"
+and check to make sure that only the key(s) you wanted were added.
+
+[srikanth@localhost .ssh]$ ssh sena@localhost
+Last login: Sat Jun  2 03:22:15 2018
+[sena@localhost ~]$ ls -la
+total 16
+drwx------. 6 sena sena 140 Jun  2 03:26 .
+drwxr-xr-x. 8 root root  84 Jun  1 18:10 ..
+-rw-------. 1 sena sena  42 Jun  1 18:16 .bash_history
+-rw-r--r--. 1 sena sena  18 Apr 10 19:53 .bash_logout
+-rw-r--r--. 1 sena sena 193 Apr 10 19:53 .bash_profile
+-rw-r--r--. 1 sena sena 231 Apr 10 19:53 .bashrc
+drwxrwxr-x. 3 sena sena  18 Jun  1 18:12 .cache
+drwxrwxr-x. 3 sena sena  18 Jun  1 18:12 .config
+drwxr-xr-x. 4 sena sena  39 Jun  1 16:51 .mozilla
+drwx------. 2 sena sena  29 Jun  2 03:26 .ssh
+[sena@localhost ~]$ cd .ssh
+[sena@localhost .ssh]$ ls
+authorized_keys
+[sena@localhost .ssh]$ vi authorized_keys 
+[sena@localhost .ssh]$ cd /etc/ssh
+[sena@localhost ssh]$ vi sshd_config 
+[sena@localhost ssh]$ exit
+logout
+Connection to localhost closed.
+[srikanth@localhost .ssh]$ cd ..
+[srikanth@localhost ~]$ ls
+dead.letter  Documents  Linuxeg  Pictures  Templates
+Desktop      Downloads  Music    Public    Videos
+[srikanth@localhost ~]$ cd Desktop/
+[srikanth@localhost Desktop]$ ls
+myusage
+[srikanth@localhost Desktop]$ touch sample
+[srikanth@localhost Desktop]$ ls
+myusage  sample
+[srikanth@localhost Desktop]$ scp sample sena@localhost:/home/sena/
+sample                                        100%    0     0.0KB/s   00:00    
+[srikanth@localhost Desktop]$ ssh sena@localhost
+Last login: Sat Jun  2 03:26:56 2018 from localhost
+[sena@localhost ~]$ ls
+sample
  
