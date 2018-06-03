@@ -3,4 +3,5 @@ su is used to switch users
 vi filename opens a file and allows to edit
 pidof processname gives you the process-id of the given process
 kill process-id kills the process with the given id
+Written from the browser and after a successful pull you can view this.
  
