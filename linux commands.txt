@@ -1,0 +1,112 @@
+# command to change the directory
+cd
+# list of files and directories
+ls
+
+# List all files in a long listing (detailed) format
+ls -al
+
+# Display the present working directory
+pwd
+
+# Create a directory
+mkdir directory
+
+# Remove (delete) file
+rm file
+
+# Remove the directory and its contents recursively
+rm -r directory
+#create a file
+touch file
+
+# View the contents of file
+cat file
+
+
+# Display the first 10 lines of file
+head file
+
+# Display the last 10 lines of file
+tail file
+# Display your currently running processes
+ps
+
+# Display all the currently running processes on the system.
+ps -ef
+
+# Display process information for processname
+ps -ef | grep processname
+
+# Display and manage the top processes
+top
+
+# Interactive process viewer (top alternative)
+htop
+
+# Kill process with process ID of pid
+kill pid
+
+# Kill all processes named processname
+killall processname
+# Display stopped or background jobs
+bg
+
+# Brings the most recent background job to foreground
+fg
+
+# Brings job n to the foreground
+fg n
+
+# Search for a package by keyword.
+yum search keyword
+
+# Install package.
+yum install package
+
+# Display description and summary information about package.
+yum info package
+
+# Install package from local file named package.rpm
+rpm -i package.rpm
+
+# Remove/uninstall package.
+yum remove package
+
+# Install software from source code.
+tar zxvf sourcecode.tar.gz
+cd sourcecode
+./configure
+make
+make install
+# Search for pattern in file
+grep pattern file
+
+# Search recursively for pattern in directory
+grep -r pattern directory
+
+# Find files and directories by name
+locate name
+
+# Find files in /home/john that start with "prefix".
+find /home/john -name 'prefix*'
+
+# Find files larger than 100MB in /home
+find /home -size +100M
+
+# Connect to host as your local username.
+ssh host
+
+# Connect to host as user
+ssh user@host
+
+# Connect to host using port
+ssh -p port user@host
+ Secure copy file.txt to the /tmp folder on server
+scp file.txt server:/tmp
+
+# Copy *.html files from server to the local /tmp folder.
+scp server:/var/www/*.html /tmp
+
+# Copy all files and directories recursively from server to the current system's /tmp folder.
+scp -r server:/var/www /tmp
